@@ -26,5 +26,11 @@ module RailsDfeBoilerplate
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Config for DfE Signin
+    config.oidc_client_id = ENV["DFE_SIGN_IN_CLIENT_ID"]
+    config.oidc_client_secret = ENV["DFE_SIGN_IN_CLIENT_SECRET"]
+    config.oidc_host = ENV["DFE_SIGN_IN_HOST"]
+    config.base_url = ENV["DFE_SIGN_IN_BASE_URL"]
   end
 end
