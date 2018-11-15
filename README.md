@@ -16,6 +16,22 @@
 3. Run `bin/rails db:setup` to set up the database development and test schemas, and seed with test data.
 4. Run `bundle exec foreman start -f Procfile.dev` to launch the app on http://localhost:5000.
 
+## Running with Docker
+
+Instead of the above, you can use [Docker](https://docs.docker.com) as follows:
+
+```bash
+$ docker-compose build
+$ docker-compose run --rm web rails db:setup
+$ docker-compose up -d
+```
+
+And access it normally via http://localhost:3000
+
+To stop it, run `docker-compose stop`.
+
+NOTE: If you have changed your working directory (e.g. checkout a branch, edit a file) you have to rerun `docker-compose build` before running `docker-compose up -d` to ensure all changes are picked up.
+
 ## Linting
 
 It's best to lint just your app directories and not those belonging to the framework, e.g.
